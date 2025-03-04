@@ -38,3 +38,4 @@ def student_delete(request, pk):
         student.delete()
         return redirect('student_list')
     return render(request, 'students/student_confirm_delete.html', {'student': student})
+#oki ra
