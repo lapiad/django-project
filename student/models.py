@@ -16,3 +16,5 @@ class Student(models.Model):
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
 # Create your models here. nag edit ako dito lei
+
+#nag add ng comment
