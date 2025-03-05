@@ -26,7 +26,6 @@ def student_update(request, pk):
         if form.is_valid():
             form.save()
             return redirect('student_list')
-        # comment here
     else:
         form = StudentForm(instance=student)
     return render(request, 'students/student_form.html', {'form': form})
@@ -38,4 +37,3 @@ def student_delete(request, pk):
         student.delete()
         return redirect('student_list')
     return render(request, 'students/student_confirm_delete.html', {'student': student})
-#oki ra
