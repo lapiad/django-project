@@ -1,13 +1,19 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block content %}
+<div class="container mt-4">
+  <h2 class="mb-4">
+    {% if form.instance.pk %}Edit Student{% else %}Add Student{% endif %}
+  </h2>
 
-{% block content %}
-    <h2>{% if form.instance.pk %}Edit Student{% else %}Add Student{% endif %}</h2>
+  <form method="post">
+    {% csrf_token %}
+    <div class="mb-3">{{ form.as_p }}</div>
 
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Save</button>
-    </form>
-
-    <a href="{% url 'student_list' %}">Back to List</a>
+    <div class="d-flex justify-content-between">
+      <button type="submit" class="btn btn-primary">Save</button>
+      <a href="{% url 'student_list' %}" class="btn btn-secondary"
+        >Back to List</a
+      >
+    </div>
+  </form>
+</div>
 {% endblock %}

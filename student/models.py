@@ -10,9 +10,11 @@ class Student(models.Model):
         max_length=10,
         choices=[('Male', 'Male'), ('Female', 'Female')]
     )
+    address = models.TextField()
+    interest = models.CharField(max_length=100)
+    course = models.CharField(max_length=100, blank=True)  # AI predicted
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
-# Create your models here. 
